@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seek-(anonymous)</title>
+    <script src="./socket.io/socket.io.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./images/message.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <h3 class="logo">:seek.ch</h3>
+    </div>
+    <img src="./images/incognito.svg" id="incognito">
+    <div class="container">
+        <div class="room-code">
+            <label for="room">Room code here:</label>
+            <form id="room-input">
+                <input type="text" placeholder="::room" id="room" class="input">
+                <button id="join-btn"><img src="./images/room.svg" alt="join room!"></button>
+            </form>
+        </div>
+        <p id="join"></p>
+        <div class="chat-box">
+            <ul id="messages"></ul>
+        </div>
+        <p id="typing-indicator"></p>
+        <br>
+        <form id="send-box">
+            <input type="text" placeholder="::message" id="message" class="input">
+            <button id="send-btn"><img src="./images/send.svg" alt="send"></button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

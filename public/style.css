@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Neue-Regrade';
+    src: url('./fonts/Neue-Regrade-bold.otf') format('opentype');
+  }
+
+body{
+    margin: 0;
+    background-color: #212020;
+    font-family: "Outfit", sans-serif;
+    color: rgb(194, 193, 193);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo{
+    margin: 0;
+    font-family: 'Neue-Regrade';
+    font-size: 2rem;
+    color: #adacac;
+    margin-left: 20px;
+    padding-top:20px ;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+.room-code{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+.room-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.room-code label{
+    margin-bottom: 10px;
+}
+.input{
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: 4px solid rgb(40, 39, 39);
+    background-color: #212020;
+    color: white;
+}
+.input:focus{
+    outline: 2px solid #616161;
+}
+#send-box{
+    display: flex;
+    gap: 10px;
+}
+#send-box input{
+    min-width: 500px;
+}
+.room-code button,
+#send-box button
+{
+    background-color: #1c1c1c;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 2cqmax;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #333232;
+}
+.chat-box{
+    overflow-y: scroll;
+    overflow-x: inherit;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    height: 60lvh;
+    scrollbar-width: none;
+    color: white;
+    padding: 5px 15px;
+    width: 95%;
+}
+ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+ul li{
+    list-style-type: none;
+    margin-bottom: 10px;
+    align-self: flex-end;
+    max-width: 80%;
+}
+ul li span{
+    color: red;
+}
+#send-box{
+    position: fixed;
+    bottom: 10px;
+}
+#incognito{
+    width: 500px;
+    position: fixed;
+    right:-210px;
+    z-index: -1;
+}
+#join,
+#typing-indicator{
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    letter-spacing: 0.05rem;
+}
+#typing-indicator{
+    position: fixed;
+    bottom: 45px;
+}
+@media (max-width:582px){
+    body{
+        font-size: large;
+    }
+    .logo{
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+    #send-box input{
+        min-width: 280px;
+    }
+    #incognito{
+        width: 350px;
+        right: -180px;
+    }
+}
+.sent{
+    align-self: flex-start;
+}
