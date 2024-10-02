@@ -1,4 +1,4 @@
-const socket = io("http://localhost:8000");
+const socket = io("https://seek-ch.onrender.com/");
 const roomInput = document.getElementById("room");
 const roomForm = document.getElementById("room-input");
 const sendForm = document.getElementById("send-box");
