@@ -1,4 +1,4 @@
-const socket = io("https://seek-ch.onrender.com");
+const socket = io("http://localhost:8000");
 const roomInput = document.getElementById("room");
 const roomForm = document.getElementById("room-input");
 const sendForm = document.getElementById("send-box");
@@ -6,6 +6,7 @@ const messageInput = document.getElementById("message");
 const messagesList = document.getElementById("messages");
 const typing = document.getElementById("typing-indicator");
 const join = document.getElementById("join");
+const exitBtn=document.getElementById("exit-btn")
 let timeout;
 
 let name = getName();
@@ -28,6 +29,7 @@ function joinRoom() {
       join.textContent = "";
     }, 4000);
   });
+  roomInput.disabled=true;
 }
 
 function sendMessage() {
@@ -96,6 +98,14 @@ socket.on("left-room",(data)=>{
     join.textContent=""
   },4000)
 })
+socket.on("exited",()=>{
+  join.textContent=`You exited from the room!`
+  setTimeout(()=>{
+    join.textContent=""
+  },4000)
+  roomInput.textContent=""
+  roomInput.disabled=false
+})
 messageInput.addEventListener("input", showTyping);
 roomForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -104,4 +114,7 @@ roomForm.addEventListener("submit", (e) => {
 sendForm.addEventListener("submit",(e)=>{
   e.preventDefault();
   sendMessage()
+})
+exitBtn.addEventListener("click",()=>{
+  socket.emit("exit-room")
 })

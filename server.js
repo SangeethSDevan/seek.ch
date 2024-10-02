@@ -39,4 +39,9 @@ io.on("connection",(socket)=>{
         if(!room) return
         socket.broadcast.to(room).emit("left-room",`${name} left the room!`)
     })
+    socket.on("exit-room",()=>{
+        socket.leave(room)
+        socket.emit("exited")
+        socket.broadcast.to(room).emit("left-room",`${name} left the room!`)
+    })
 })
