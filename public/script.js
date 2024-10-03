@@ -1,5 +1,5 @@
-// const socket = io("https://seek-ch.onrender.com/");
-const socket=io("http://localhost:8000")
+const socket = io("https://seek-ch.onrender.com/");
+// const socket=io("http://localhost:8000")
 
 const roomInput = document.getElementById("room");
 const roomForm = document.getElementById("room-input");
@@ -42,9 +42,7 @@ function sendMessage() {
   if (!message) return alert("Message can't be empty!");
 
   const li = document.createElement("li");
-
-  message = message.length > 150 ? message.slice(0, 150) : message;
-  li.textContent = `${message} : You`;
+  li.textContent = message;
   messagesList.appendChild(li);
   socket.emit("send-message", { room, name, message });
   messageInput.value = "";
