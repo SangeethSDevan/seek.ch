@@ -34,11 +34,6 @@ io.on("connection",(socket)=>{
     socket.on("remove-typing",(room)=>{
         socket.broadcast.to(room).emit("not-typing")
     })
-    socket.on("disconnect",(data)=>{
-        if(!name) name="unknown"
-        if(!room) return
-        socket.broadcast.to(room).emit("left-room",`${name} left the room!`)
-    })
     socket.on("exit-room",()=>{
         socket.leave(room)
         socket.emit("exited")

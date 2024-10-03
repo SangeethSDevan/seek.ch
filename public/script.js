@@ -1,4 +1,6 @@
-const socket = io("https://seek-ch.onrender.com/");
+// const socket = io("https://seek-ch.onrender.com/");
+const socket=io("http://localhost:8000")
+
 const roomInput = document.getElementById("room");
 const roomForm = document.getElementById("room-input");
 const sendForm = document.getElementById("send-box");
@@ -53,7 +55,7 @@ function showTyping() {
   socket.emit("show-typing", { room, name });
 
   clearTimeout(timeout);
-  timeout = setTimeout(stopTyping, 3000);
+  timeout = setTimeout(stopTyping, 2000);
 }
 function stopTyping() {
   const room = roomInput.value;
@@ -103,8 +105,8 @@ socket.on("exited",()=>{
   setTimeout(()=>{
     join.textContent=""
   },4000)
-  roomInput.textContent=""
   roomInput.disabled=false
+  roomInput.value=""
 })
 messageInput.addEventListener("input", showTyping);
 roomForm.addEventListener("submit", (e) => {
