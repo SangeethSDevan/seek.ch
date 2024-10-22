@@ -52,12 +52,6 @@ Seek.ch is a real-time chat application that allows users to communicate with ea
 2. Messages are sent and received in real time using **Socket.io**.
 3. Each user can join a specific chat room for group discussions.
 
-## Future Improvements
-
-- **User Authentication**: Implement user login and authentication for personalized chats.
-- **Message Persistence**: Optionally add a database to store chat history.
-- **File Sharing**: Allow users to send files or images in chat.
-
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
